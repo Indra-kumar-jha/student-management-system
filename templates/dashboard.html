@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="dashboard-container">
+    <h2>Welcome to the <span class="highlight">Dashboard</span></h2>
+    <p class="tagline">Your central hub for managing student records.</p>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>Add Student</h3>
+            <p>Register a new student into the system.</p>
+            <a href="{{ url_for('add_student') }}" class="btn">Add Now</a>
+        </div>
+
+        <div class="card">
+            <h3>View Students</h3>
+            <p>See, edit, or delete student records.</p>
+            <a href="{{ url_for('view_students') }}" class="btn">View List</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

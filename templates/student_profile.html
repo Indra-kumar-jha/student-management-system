@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+<style>
+    .profile-container {
+        max-width: 700px;
+        margin: 40px auto;
+        background: #ffffff;
+        padding: 30px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+    }
+
+    .profile-container h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 25px;
+    }
+
+    .profile-row {
+        display: flex;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .profile-row label {
+        width: 150px;
+        font-weight: bold;
+        color: #444;
+    }
+
+    .profile-row div {
+        flex: 1;
+        color: #222;
+    }
+
+    .icon {
+        margin-right: 8px;
+        color: #007BFF;
+    }
+
+    .no-data {
+        text-align: center;
+        color: #888;
+        font-style: italic;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="profile-container">
+    <h2>👤 Student Profile</h2>
+
+    {% if student %}
+        <div class="profile-row">
+            <label><i class="icon">🧑</i> Name:</label>
+            <div>{{ student.name }}</div>
+        </div>
+
+        <div class="profile-row">
+            <label><i class="icon">🔢</i> Roll Number:</label>
+            <div>{{ student.roll }}</div>
+        </div>
+
+        <div class="profile-row">
+            <label><i class="icon">🏫</i> Class:</label>
+            <div>{{ student.class }}</div>
+        </div>
+
+        <div class="profile-row">
+            <label><i class="icon">📧</i> Email:</label>
+            <div>{{ student.email }}</div>
+        </div>
+
+        <div class="profile-row">
+            <label><i class="icon">📞</i> Phone:</label>
+            <div>{{ student.phone }}</div>
+        </div>
+
+        <div class="profile-row">
+            <label><i class="icon">🏠</i> Address:</label>
+            <div>{{ student.address }}</div>
+        </div>
+    {% else %}
+        <p class="no-data">No student data found.</p>
+    {% endif %}
+</div>
+{% endblock %}

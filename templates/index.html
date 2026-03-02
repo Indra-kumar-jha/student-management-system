@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<style>
+    .welcome-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        background: #ffffff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .welcome-container h2 {
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .welcome-container p {
+        color: #555;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .login-button {
+        padding: 12px 25px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        margin: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .admin-btn {
+        background-color: #007BFF;
+        color: white;
+    }
+
+    .admin-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .student-btn {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .student-btn:hover {
+        background-color: #1e7e34;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<div class="welcome-container">
+    <h2>👋 Welcome to the Student Management System</h2>
+    <p>Please select your login type to continue:</p>
+
+    <a href="{{ url_for('login', role='admin') }}">
+        <button class="login-button admin-btn">Login as Admin</button>
+    </a>
+
+    <a href="{{ url_for('login', role='student') }}">
+        <button class="login-button student-btn">Login as Student</button>
+    </a>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("Index page loaded successfully.");
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="form-container">
+    <h2>Add New Student</h2>
+    <form method="POST" action="{{ url_for('add_student') }}">
+        <div class="form-group">
+            <label>Full Name:</label>
+            <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+            <label>Roll Number:</label>
+            <input type="text" name="roll" required>
+        </div>
+        <div class="form-group">
+            <label>Class:</label>
+            <input type="text" name="class" required>
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" name="email">
+        </div>
+        <div class="form-group">
+            <label>Phone:</label>
+            <input type="text" name="phone">
+        </div>
+        <div class="form-group">
+            <label>Address:</label>
+            <textarea name="address" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn">Add Student</button>
+    </form>
+</div>
+{% endblock %}
