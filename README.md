@@ -6,8 +6,8 @@ This application allows administrators to manage student records and students to
 ---
 
  Live Demo
-👉 https://your-render-link.onrender.com  
-*(Replace with your actual deployment link)*
+👉 https://student-management-system-7jqv.onrender.com  
+
 
 ---
 
